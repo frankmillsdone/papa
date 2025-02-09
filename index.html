@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papa's Freezeria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #87CEEB, #E0FFFF);
+            font-family: 'Fredoka One', cursive;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            font-size: 48px;
+            color: #FF6B6B;
+            text-shadow: 3px 3px 0px #FFF, 
+                         6px 6px 0px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .header::after {
+            content: '🍦';
+            font-size: 40px;
+            position: absolute;
+            margin-left: 10px;
+            animation: float 2s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .game-container {
+            width: 100%;
+            max-width: 900px;
+            height: 85vh;
+            border: 8px solid #FFF;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2),
+                        inset 0 0 15px rgba(0,0,0,0.1);
+            background-color: #FFF;
+            overflow: hidden;
+            position: relative;
+        }
+        .game-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, #FF6B6B, #FFB6B6);
+            border-radius: 10px 10px 0 0;
+        }
+        @media (max-width: 768px) {
+            .game-container {
+                height: 70vh;
+                border-width: 5px;
+            }
+            .header {
+                font-size: 36px;
+            }
+            .header::after {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">PAPA'S FREEZERIA</div>
+    <iframe 
+        class="game-container"
+        src="https://papas-freezeria.io/papas-freezeria.embed"
+        frameborder="0"
+        allowfullscreen
+        scrolling="no"
+    ></iframe>
+</body>
+</html> 
